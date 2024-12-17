@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #1e1e2f, #2a2a40);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .lock-screen, .content {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        .lock-screen {
+            display: block;
+        }
+        .container {
+            padding: 20px;
+            border: 2px solid #fff;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px #000000;
+            color: #ffd1dc; /* Light Pink */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ff6f61;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff3d2e;
+        }
+        .message {
+            margin-top: 20px;
+            color: #ffddf4;
+            font-size: 1.1rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .surprise {
+            font-size: 2rem;
+            color: #ff6f61;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out forwards;
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Lock Screen -->
+    <div class="lock-screen container">
+        <h1>Enter Passcode to Unlock ❤️</h1>
+        <input type="password" id="passcode" placeholder="Enter 4-digit passcode" maxlength="4" style="font-size: 1.2rem; padding: 10px; border-radius: 5px; border: none;">
+        <br><br>
+        <button onclick="unlock()">Unlock</button>
+        <p id="error" style="color: #ff3d2e; font-weight: bold; display: none;">Incorrect Passcode 😟</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content container">
+        <h1>Hey love,</h1>
+        <p class="message">
+            It's your birthday today, and I can’t be there with you because of these exams 😭, but that doesn't mean you don’t have my heart. Sending all my love across the miles just for you!<br><br>
+            Happy Birthday to the most amazing girl I’ve ever met! I loveeeeeee you more than words can say.<br><br>
+            May all your delulu dreams come trululu,<br>
+            And may all our meet-up plans finally turn real soon.<br><br>
+            Birthday wish karna toh bas ek excuse tha 😜,<br>
+            Mujhe toh DSA exam prepare karna tha!<br><br>
+            Is baar website se kaam chala lo,<br>
+            Next year, app bhi banayenge 💖<br><br>
+            Lots of love and virtual hugs 🫶🏻🫂<br>
+            Your forever 🧑🏻‍💻✨<br>
+            <br><i>P.S. Tum meri life ka best code ho jo kabhi bug-free nahi hona chahiye.</i>
+        </p>
+        <button onclick="showSurprise()">Click for a Surprise!</button>
+        <p id="surprise" class="surprise">I Love You Forever! 💖</p>
+    </div>
+
+    <script>
+        const correctPasscode = "1712"; // Passcode updated to 1712
+
+        function unlock() {
+            const enteredPasscode = document.getElementById("passcode").value;
+            if (enteredPasscode === correctPasscode) {
+                document.querySelector(".lock-screen").style.display = "none";
+                document.querySelector(".content").style.display = "block";
+            } else {
+                document.getElementById("error").style.display = "block"; // Show error message
+            }
+        }
+
+        function showSurprise() {
+            document.getElementById("surprise").style.display = "block";
+        }
+    </script>
+</body>
+</html>
